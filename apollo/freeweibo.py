@@ -117,7 +117,7 @@ class FreeWeiboFetcher:
 				safe = re.sub(r'\"', '\\\"', safe)
 				safe = re.sub(r'\u', '\\u', safe)
 				self.posts[-1]['content'] = safe
-				self.posts[-1]['hash'] = hash(doc['content']) % ((sys.maxsize + 1) * 2)
+				self.posts[-1]['hash'] = hash(self.posts[-1]['content']) % ((sys.maxsize + 1) * 2)
 											#  Add post data
 				self.posts[-1]['data-id'] = dataId
 				self.posts[-1]['weibo-id'] = weiboId
